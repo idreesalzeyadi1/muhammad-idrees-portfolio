@@ -1,40 +1,46 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
-// Your actual skills with images
+// 1. Vite mein assets ko handle karne ke liye top par import karna zaroori hai
+import webImg from '../assets/web.jpg'
+import typingImg from '../assets/typing.jpg'
+import msofficeImg from '../assets/msoffice.jpg'
+import canvaImg from '../assets/canva.jpg'
+import digitalImg from '../assets/digital.jpg'
+
 const skills = [
   {
-    image: '/src/assets/web.jpg',
+    image: webImg, // Path string ke bajaye imported variable use karein
     name: 'Web Development',
     description: 'Building modern, responsive websites and web applications using React, HTML, CSS, JavaScript, and Tailwind CSS.',
     color: 'from-cyan-400 to-blue-500',
   },
   {
-    image: '/src/assets/typing.jpg',
+    image: typingImg,
     name: 'Typing',
     description: 'Professional typing skills with high speed and accuracy for efficient documentation and data entry.',
     color: 'from-green-400 to-emerald-600',
   },
   {
-    image: '/src/assets/msoffice.jpg',
+    image: msofficeImg,
     name: 'MS Office',
     description: 'Expert in Microsoft Office Suite including Word, Excel, PowerPoint, and Outlook for professional documentation.',
     color: 'from-orange-400 to-red-500',
   },
   {
-    image: '/src/assets/canva.jpg',
+    image: canvaImg,
     name: 'Canva',
     description: 'Creating stunning graphics, presentations, social media posts, and marketing materials using Canva.',
     color: 'from-purple-400 to-pink-500',
   },
   {
-    image: '/src/assets/digital.jpg',
+    image: digitalImg,
     name: 'Digital Marketing',
     description: 'Social media marketing, SEO basics, content strategy, and online brand promotion techniques.',
     color: 'from-yellow-400 to-orange-500',
   },
   {
-    image: '/src/assets/teaching.jpg',
+    
     name: 'Teaching',
     description: 'Experienced educator with skills in curriculum development, classroom management, and student engagement.',
     color: 'from-teal-400 to-cyan-500',
@@ -85,18 +91,10 @@ function Skills() {
                   src={skill.image}
                   alt={skill.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  onError={(e) => {
-                    e.target.style.display = 'none'
-                    e.target.nextSibling.style.display = 'flex'
-                  }}
                 />
-                {/* Placeholder if image fails */}
-                <div className={`hidden w-full h-full items-center justify-center bg-gradient-to-br ${skill.color}`}>
-                  <span className="text-white text-4xl font-bold">{skill.name.charAt(0)}</span>
-                </div>
                 
                 {/* Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
               </div>
 
               {/* Content */}
