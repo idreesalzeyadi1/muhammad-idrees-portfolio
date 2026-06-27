@@ -8,12 +8,13 @@ import dartImg from '../assets/dart.png'
 const certificates = [
   {
     id: 1,
-    image: null, // Jald hi jab aap file add karein to isay import kar ke yahan variable pass kar sakte hain
+    image: null, 
     title: 'Advanced AI (ACT AI)',
     issuer: 'NAVTTC / HEC Pakistan',
     date: '2026',
     credentialUrl: '#', 
-    skills: ['Artificial Intelligence', 'Machine Learning', 'Deep Learning', 'Python'],
+    // Updated tags as requested
+    skills: ['DIFF AI TOOLS', 'WEB CODING', 'CUSTOMIZE CHAT BOTS'],
   },
   {
     id: 2,
@@ -26,7 +27,7 @@ const certificates = [
   },
   {
     id: 3,
-    image: dartImg, // Cisco Dart Certificate Image linked directly
+    image: dartImg, 
     title: 'Dart Fundamentals',
     issuer: 'Cisco Networking Academy',
     date: '2025',
@@ -82,7 +83,6 @@ function Certificates() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 ) : (
-                  /* Professional Award Placeholder if image is missing */
                   <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-primary-500/10 to-accent-gold/10">
                     <Award className="text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300" size={54} />
                     <span className="text-gray-500 text-xs font-medium tracking-wide uppercase">Verified Credential</span>
@@ -123,7 +123,7 @@ function Certificates() {
                   {cert.skills.map((skill, i) => (
                     <span
                       key={i}
-                      className="px-2 py-1 bg-dark-700 text-gray-400 text-xs rounded-md border border-gray-600/10"
+                      className="px-2 py-1 bg-dark-700 text-gray-400 text-xs rounded-md border border-gray-600/10 uppercase"
                     >
                       {skill}
                     </span>
