@@ -2,11 +2,17 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { ExternalLink, Github, Folder, Clock } from 'lucide-react'
 
-// Your actual projects
+// Vite production-friendly static imports
+import mjImg from '../assets/mj.jpeg'
+import afsImg from '../assets/afs.jpg'
+import mcsImg from '../assets/mcs.jpg'
+import studentImg from '../assets/student.png'
+
+// Your actual projects with fixed imported variables
 const projects = [
   {
     id: 1,
-    image: '/src/assets/mj.jpeg',
+    image: mjImg,
     title: 'M&J Traders',
     description: 'A full-featured e-commerce platform for electronics with cart, checkout, order tracking, and admin panel. Built with React and Firebase.',
     technologies: ['React', 'Firebase', 'Tailwind CSS', 'Framer Motion'],
@@ -17,7 +23,7 @@ const projects = [
   },
   {
     id: 2,
-    image: '/src/assets/afs.jpg',
+    image: afsImg,
     title: 'AFS Virtual Tutor Hub',
     description: 'An educational platform for virtual tutoring with course management, student dashboard, and interactive learning features.',
     technologies: ['React', 'Vercel', 'CSS3', 'JavaScript'],
@@ -28,7 +34,7 @@ const projects = [
   },
   {
     id: 3,
-    image: '/src/assets/mcs.jpg',
+    image: mcsImg,
     title: 'MCS Maths Battle',
     description: 'An interactive math competition web app where students can battle in real-time math challenges and track their scores.',
     technologies: ['React', 'JavaScript', 'Vercel', 'CSS3'],
@@ -39,7 +45,7 @@ const projects = [
   },
   {
     id: 4,
-    image: '/src/assets/student.png',
+    image: studentImg,
     title: 'StudentTrack',
     description: 'A student management and tracking system for monitoring attendance, grades, and academic progress.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
@@ -124,10 +130,6 @@ function Projects() {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    onError={(e) => {
-                      e.target.style.display = 'none'
-                      e.target.nextSibling.style.display = 'flex'
-                    }}
                   />
                 ) : null}
                 
