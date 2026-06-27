@@ -5,7 +5,7 @@ import { GraduationCap, Calendar, Award, MapPin } from 'lucide-react'
 // Import images
 import uniLogo from '../assets/uni.jpg'
 import collegeLogo from '../assets/college.jfif'
-import schoolLogo from '../assets/School.png'
+import schoolLogo from '../assets/school.png'
 import medLogo from '../assets/med.png'
 
 // Your actual education
