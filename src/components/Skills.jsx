@@ -22,7 +22,7 @@ const skills = [
     color: 'from-orange-400 to-red-500',
   },
   {
-    image: '/src/assets/mcs.jpg',
+    image: '/src/assets/canva.jpg',
     name: 'Canva',
     description: 'Creating stunning graphics, presentations, social media posts, and marketing materials using Canva.',
     color: 'from-purple-400 to-pink-500',
