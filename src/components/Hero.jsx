@@ -256,7 +256,7 @@ function Hero() {
                 />
               </div>
 
-              {/* معلومات */}
+              {/*info */}
               <h3 className="text-2xl font-bold text-white font-display mb-1">Muhammad Idrees</h3>
               <p className="text-primary-400 font-medium text-sm mb-4">Computer Science Teacher & Web Developer</p>
               
@@ -264,7 +264,7 @@ function Hero() {
                 I am a computer science teacher and web developer based in Peshawar, Pakistan. I am passionate about creating engaging and user-friendly websites and applications.
               </p>
 
-              {/* ڈائریکٹ لنکس کنٹینر */}
+              {/*links */}
               <div className="space-y-3 text-left mb-6 bg-dark-900/50 p-4 rounded-xl border border-dark-700">
                 <a href="mailto:idreesalzeyadi03@gmail.com" className="flex items-center gap-3 text-gray-300 hover:text-primary-400 text-sm transition-colors">
                   <Mail size={16} className="text-primary-400" />

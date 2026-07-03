@@ -1,16 +1,17 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
-// 1. Vite mein assets ko handle karne ke liye top par import karna zaroori hai
+// Vite assets imports
 import webImg from '../assets/web.jpg'
 import typingImg from '../assets/typing.jpg'
 import msofficeImg from '../assets/msoffice.jpg'
 import canvaImg from '../assets/canva.jpg'
 import digitalImg from '../assets/digital.jpg'
+import markImg from '../assets/mark.jpg'
 
 const skills = [
   {
-    image: webImg, // Path string ke bajaye imported variable use karein
+    image: webImg,
     name: 'Web Development',
     description: 'Building modern, responsive websites and web applications using React, HTML, CSS, JavaScript, and Tailwind CSS.',
     color: 'from-cyan-400 to-blue-500',
@@ -34,15 +35,15 @@ const skills = [
     color: 'from-purple-400 to-pink-500',
   },
   {
-    image: digitalImg,
+    image: markImg,digitalImg, // FIXED: "Digital Marketing" text wali image yahan set kar di hai
     name: 'Digital Marketing',
     description: 'Social media marketing, SEO basics, content strategy, and online brand promotion techniques.',
     color: 'from-yellow-400 to-orange-500',
   },
   {
-    
-    name: 'Teaching',
-    description: 'Experienced educator with skills in curriculum development, classroom management, and student engagement.',
+    image: digitalImg, // FIXED: Icons/Social wali image yahan set kar di hai
+    name: 'Social Media Management',
+    description: 'Proficient in social media platforms like Facebook, Twitter, LinkedIn, and Instagram for effective engagement and content creation.',
     color: 'from-teal-400 to-cyan-500',
   },
 ]
@@ -83,7 +84,7 @@ function Skills() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="glass-card overflow-hidden group cursor-pointer"
+              className="glass-card overflow-hidden group cursor-pointer relative"
             >
               {/* Skill Image */}
               <div className="relative h-40 overflow-hidden">

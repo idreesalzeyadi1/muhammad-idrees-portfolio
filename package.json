@@ -9,12 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@lottiefiles/react-lottie-player": "^3.5.3",
+    "firebase": "^12.15.0",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.454.0",
-    "@lottiefiles/react-lottie-player": "^3.5.3",
-    "react-intersection-observer": "^9.5.3"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.5.3",
+    "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.0",
