@@ -10,7 +10,7 @@ const certificates = [
     id: 1,
     image: null, 
     title: 'Advanced AI (ACT AI)',
-    issuer: 'NAVTTC / HEC Pakistan',
+    issuer: ' HEC Pakistan',
     date: '2026',
     credentialUrl: '#', 
     // Updated tags as requested

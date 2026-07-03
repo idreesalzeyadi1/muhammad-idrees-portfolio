@@ -12,7 +12,7 @@ import markImg from '../assets/mark.jpg'
 const skills = [
   {
     image: webImg,
-    name: 'Web Development',
+    name: 'Web Development (WIBE CODING)',
     description: 'Building modern, responsive websites and web applications using React, HTML, CSS, JavaScript, and Tailwind CSS.',
     color: 'from-cyan-400 to-blue-500',
   },
@@ -25,7 +25,7 @@ const skills = [
   {
     image: msofficeImg,
     name: 'MS Office',
-    description: 'Expert in Microsoft Office Suite including Word, Excel, PowerPoint, and Outlook for professional documentation.',
+    description: 'Expert in Microsoft Office Suite including Word and  PowerPoint for professional documentation.',
     color: 'from-orange-400 to-red-500',
   },
   {
