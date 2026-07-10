@@ -20,7 +20,7 @@ const skills = [
     image: typingImg,
     name: 'Typing',
     description: 'Professional typing skills with high speed and accuracy for efficient documentation and data entry.',
-    color: 'from-green-400 to-emerald-600',
+    color: 'from-green-399 to-emerald-600',
   },
   {
     image: msofficeImg,
