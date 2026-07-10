@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { db } from '../firebase'
 import { collection, getDocs, query, where } from 'firebase/firestore'
-import { Star, Quote, ExternalLink } from 'lucide-react'
+import { Star, Quote, ExternalLink, BadgeCheck } from 'lucide-react'
 
 function Reviews() {
   const [reviews, setReviews] = useState([])
@@ -31,14 +31,20 @@ function Reviews() {
     if (review.url) {
       return (
         <a href={review.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 group w-fit">
-          <span className="text-primary-400 font-semibold text-sm group-hover:text-primary-300 transition-colors underline underline-offset-2">
+          <span className="text-primary-400 font-semibold text-sm group-hover:text-primary-300 transition-colors">
             {review.name}
           </span>
+          <BadgeCheck size={15} className="text-[#1D9BF0] shrink-0" fill="#1D9BF0" stroke="#0f1115" strokeWidth={1.5} />
           <ExternalLink size={12} className="text-primary-400/60 group-hover:text-primary-300 transition-colors" />
         </a>
       )
     }
-    return <p className="text-white font-semibold text-sm">{review.name}</p>
+    return (
+      <div className="flex items-center gap-1 w-fit">
+        <p className="text-white font-semibold text-sm">{review.name}</p>
+        <BadgeCheck size={15} className="text-[#1D9BF0] shrink-0" fill="#1D9BF0" stroke="#0f1115" strokeWidth={1.5} />
+      </div>
+    )
   }
 
   return (
@@ -86,7 +92,7 @@ function Reviews() {
                   ))}
                 </div>
 
-                <p className="text-gray-300 leading-relaxed flex-1 mb-6">
+                <p className="text-gray-300 leading-relaxed flex-1 mb-6 italic">
                   "{review.message}"
                 </p>
 
@@ -96,8 +102,14 @@ function Reviews() {
                   </div>
                   <div className="flex-1 min-w-0">
                     {renderName(review)}
-                    <p className="text-gray-500 text-xs truncate">
-                      {review.role}{review.role && review.company ? ' • ' : ''}{review.company}
+                    <p className="text-xs truncate">
+                      {review.role && (
+                        <span className="text-primary-400 font-bold">{review.role}</span>
+                      )}
+                      {review.role && review.company ? <span className="text-gray-500"> • </span> : ''}
+                      {review.company && (
+                        <span className="text-gray-300 font-semibold">{review.company}</span>
+                      )}
                     </p>
                   </div>
                 </div>

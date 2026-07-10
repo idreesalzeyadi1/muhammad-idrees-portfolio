@@ -92,7 +92,7 @@ function ReviewForm() {
             <label className="text-gray-400 text-sm mb-2 block">Your Name *</label>
             <input
               type="text"
-              placeholder="e.g. Ahmed Khan"
+              placeholder="e.g. Enter your name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               className="w-full bg-dark-700 border border-dark-600 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-primary-500 transition-colors"
@@ -105,7 +105,7 @@ function ReviewForm() {
               <label className="text-gray-400 text-sm mb-2 block">Designation</label>
               <input
                 type="text"
-                placeholder="e.g. Principal"
+                placeholder="e.g. Principal / CEO"
                 value={form.role}
                 onChange={(e) => setForm({ ...form, role: e.target.value })}
                 className="w-full bg-dark-700 border border-dark-600 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-primary-500 transition-colors"
@@ -115,7 +115,7 @@ function ReviewForm() {
               <label className="text-gray-400 text-sm mb-2 block">Company / School</label>
               <input
                 type="text"
-                placeholder="e.g. MCS Peshawar"
+                placeholder="e.g. PMS SCHOOL AND COLLEGE"
                 value={form.company}
                 onChange={(e) => setForm({ ...form, company: e.target.value })}
                 className="w-full bg-dark-700 border border-dark-600 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-primary-500 transition-colors"
