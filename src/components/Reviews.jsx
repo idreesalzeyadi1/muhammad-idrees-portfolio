@@ -27,6 +27,12 @@ function Reviews() {
     fetchReviews()
   }, [])
 
+  const formatDate = (timestamp) => {
+    if (!timestamp) return ''
+    const date = new Date(timestamp.seconds * 1000)
+    return date.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })
+  }
+
   const renderName = (review) => {
     if (review.url) {
       return (
@@ -80,39 +86,56 @@ function Reviews() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-dark-800/60 border border-dark-700 hover:border-primary-500/40 rounded-2xl p-6 transition-all duration-300 flex flex-col"
               >
+                {/* Quote icon */}
                 <Quote size={24} className="text-primary-500/40 mb-4" />
 
-                <div className="flex gap-1 mb-4">
-                  {[1, 2, 3, 4, 5].map(s => (
-                    <Star
-                      key={s}
-                      size={16}
-                      className={s <= review.rating ? 'text-accent-gold fill-accent-gold' : 'text-dark-600'}
-                    />
-                  ))}
-                </div>
-
+                {/* Review message */}
                 <p className="text-gray-300 leading-relaxed flex-1 mb-6 italic">
                   "{review.message}"
                 </p>
 
-                <div className="flex items-center gap-3 pt-4 border-t border-dark-700">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-accent-gold flex items-center justify-center text-white font-bold shrink-0">
-                    {review.name?.charAt(0).toUpperCase()}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    {renderName(review)}
-                    <p className="text-xs truncate">
-                      {review.role && (
-                        <span className="text-primary-400 font-bold">{review.role}</span>
-                      )}
-                      {review.role && review.company ? <span className="text-gray-500"> • </span> : ''}
-                      {review.company && (
-                        <span className="text-gray-300 font-semibold">{review.company}</span>
-                      )}
-                    </p>
+                {/* Date */}
+                {review.createdAt && (
+                  <p className="text-xs text-gray-500 mb-4">
+                    {formatDate(review.createdAt)}
+                  </p>
+                )}
+
+                {/* Divider */}
+                <div className="pt-4 border-t border-dark-700">
+                  <div className="flex items-center gap-3">
+                    {/* Avatar */}
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-accent-gold flex items-center justify-center text-white font-bold shrink-0">
+                      {review.name?.charAt(0).toUpperCase()}
+                    </div>
+
+                    {/* Name, role, company + Stars */}
+                    <div className="flex-1 min-w-0">
+                      {renderName(review)}
+                      <p className="text-xs truncate">
+                        {review.role && (
+                          <span className="text-primary-400 font-bold">{review.role}</span>
+                        )}
+                        {review.role && review.company ? <span className="text-gray-500"> • </span> : ''}
+                        {review.company && (
+                          <span className="text-gray-300 font-semibold">{review.company}</span>
+                        )}
+                      </p>
+
+                      {/* Stars — reviewer ke saath */}
+                      <div className="flex gap-0.5 mt-1">
+                        {[1, 2, 3, 4, 5].map(s => (
+                          <Star
+                            key={s}
+                            size={13}
+                            className={s <= review.rating ? 'text-accent-gold fill-accent-gold' : 'text-dark-600'}
+                          />
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
+
               </motion.div>
             ))}
           </div>
