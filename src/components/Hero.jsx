@@ -117,8 +117,8 @@ function Hero() {
               className="flex gap-8 mt-12 pt-8 border-t border-dark-700"
             >
               {[
-                { value: '2+', label: 'Years Experience' },
-                { value: '4+', label: 'Projects Completed' },
+                { value: '3+', label: 'Years Experience' },
+                { value: '5+', label: 'Projects Completed' },
                 { value: '500+', label: 'Students Taught' },
               ].map((stat, index) => (
                 <div key={index}>
