@@ -8,17 +8,17 @@ import dartImg from '../assets/dart.png'
 const certificates = [
   {
     id: 1,
-    image: null, 
+    image: ActAiCrtImg, 
     title: 'Advanced AI (ACT AI)',
     issuer: ' HEC Pakistan',
     date: '2026',
     credentialUrl: '#', 
     // Updated tags as requested
-    skills: ['DIFF AI TOOLS', 'WEB CODING', 'CUSTOMIZE CHAT BOTS'],
+    skills: ['AI TOOLS', 'VIBE CODING', 'CUSTOMIZE CHAT BOTS'],
   },
   {
     id: 2,
-    image: null, 
+    image: DigitalMrkImg, 
     title: 'Digital Marketing Course',
     issuer: 'DigiSkills (via NAVTTC)',
     date: '2026',
