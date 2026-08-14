@@ -39,6 +39,15 @@ const certificates = [
     credentialUrl: '#', 
     skills: ['Dart Programming', 'Flutter Basics', 'OOP', 'Application Logic'],
   },
+  {
+    id: 4,
+    image: dartImg, 
+    title: 'Dart Fundamentals',
+    issuer: 'Cisco Networking Academy',
+    date: '2025',
+    credentialUrl: '#', 
+    skills: ['Dart Programming', 'Flutter Basics', 'OOP', 'Application Logic'],
+  },
 ]
 
 function Certificates() {
