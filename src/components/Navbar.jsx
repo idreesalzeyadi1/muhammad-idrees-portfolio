@@ -26,6 +26,7 @@ function Navbar() {
 
   return (
     <motion.nav
+      aria-label="Main Navigation"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -34,9 +35,10 @@ function Navbar() {
       }`}
     >
       <div className="container-custom flex items-center justify-between">
-        {/* Logo / Name */}
+        {/* Logo / Name with Clean Canonical/Root Target */}
         <motion.a
-          href="#"
+          href="/"
+          title="Muhammad Idrees - Web Developer Home"
           className="flex items-center gap-1 group"
           whileHover={{ scale: 1.02 }}
         >
@@ -61,6 +63,7 @@ function Navbar() {
             <motion.a
               key={link.name}
               href={link.href}
+              title={`Navigate to ${link.name}`}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
@@ -75,6 +78,7 @@ function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           className="lg:hidden p-2 text-gray-400 hover:text-primary-400 transition-colors"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -95,6 +99,7 @@ function Navbar() {
                 <motion.a
                   key={link.name}
                   href={link.href}
+                  title={`Navigate to ${link.name}`}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
