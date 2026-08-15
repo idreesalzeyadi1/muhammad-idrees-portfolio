@@ -46,62 +46,6 @@
     <link rel="apple-touch-icon" href="/favicon.jpg" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- FLASH-PREVENTION: matches actual Tailwind theme so pre-hydration content doesn't visually jump -->
-    <style>
-      html { background: #0f172a; }
-      body {
-        margin: 0;
-        background: #0f172a;
-        color: #f3f4f6;
-        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-        -webkit-font-smoothing: antialiased;
-      }
-      #root header {
-        padding: 1.25rem 1.5rem;
-        background: rgba(30, 41, 59, 0.8);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(51, 65, 85, 0.5);
-      }
-      #root nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        list-style: none;
-        padding: 0;
-        margin: 1rem 0 0;
-      }
-      #root nav a {
-        color: #22d3ee;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 0.95rem;
-      }
-      #root nav a:hover { color: #06b6d4; }
-      #root main {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2.5rem 1.5rem 4rem;
-      }
-      #root h1 {
-        font-size: clamp(1.5rem, 4vw, 2.25rem);
-        margin: 0;
-        background: linear-gradient(to right, #22d3ee, #0891b2);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      #root h2 {
-        color: #f3f4f6;
-        font-size: 1.4rem;
-        margin-top: 2.5rem;
-      }
-      #root p { color: #d1d5db; line-height: 1.7; }
-      #root a { color: #22d3ee; }
-      #root a:hover { color: #06b6d4; }
-      #root ul li { color: #d1d5db; margin-bottom: 0.4rem; }
-      #root strong { color: #fbbf24; }
-    </style>
-
     <!-- JSON-LD: Person -->
     <script type="application/ld+json">
     {
@@ -195,7 +139,7 @@
     </script>
   </head>
   <body>
-    <!-- Pre-rendered Static HTML Content for SEO Crawlers and pre-hydration paint -->
+    <!-- Pre-rendered Static HTML Content for SEO Crawlers before React Hydration -->
     <div id="root">
       <header>
         <h1>Muhammad Idrees — Web Developer & Digital Marketer in Peshawar, KP</h1>
@@ -204,9 +148,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="/cv.pdf">Download CV</a></li>
           </ul>
@@ -232,12 +174,8 @@
             <li>Social media marketing and content strategy</li>
             <li>ICT and Computer Science teaching and mentorship</li>
           </ul>
-          <h2 id="education-preview">Education &amp; Background</h2>
           <p>
-            Muhammad Idrees holds a Bachelor of Science in Computer Science from Farabi Degree College, and combines this academic foundation with hands-on classroom experience mentoring students in Computer Science alongside freelance development work. This blend of formal education and practical teaching gives him a grounded, results-focused approach to both coding and digital strategy.
-          </p>
-          <p>
-            Based in Peshawar, KP, and available for clients across Pakistan, Muhammad Idrees combines technical development skills with digital marketing expertise to deliver complete, results-driven solutions. Explore the <a href="#skills">core technical skills</a> and <a href="#projects">recent project work</a> sections to see recent work, read what clients and students have to say in the <a href="#reviews">testimonials section</a>, or visit the <a href="#contact">contact form</a> to discuss your next project directly.
+            Based in Peshawar, KP, and available for clients across Pakistan, Muhammad Idrees combines technical development skills with digital marketing expertise to deliver complete, results-driven solutions. Explore the <a href="#skills">Skills</a> and <a href="#projects">Projects</a> sections to see recent work, or visit the <a href="#contact">Contact</a> page to get in touch directly.
           </p>
         </section>
       </main>
