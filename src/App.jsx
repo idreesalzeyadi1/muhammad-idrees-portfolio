@@ -33,7 +33,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Portfolio />} />
+        <Route path="#home" element={<Portfolio />} />
         <Route path="/review" element={<ReviewForm />} />
         <Route path="/admin" element={<AdminReviews />} />
       </Routes>
