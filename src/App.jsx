@@ -10,6 +10,8 @@ import Reviews from './components/Reviews'
 import Footer from './components/Footer'
 import ReviewForm from './components/ReviewForm'
 import AdminReviews from './components/AdminReviews'
+import Blog from './components/Blog'
+import BlogDetail from './components/BlogDetail'
 
 function Portfolio() {
   return (
@@ -29,13 +31,35 @@ function Portfolio() {
   )
 }
 
+function BlogLayout() {
+  return (
+    <div className="min-h-screen bg-dark-900 overflow-x-hidden">
+      <Navbar />
+      <Blog />
+      <Footer />
+    </div>
+  )
+}
+
+function BlogDetailLayout() {
+  return (
+    <div className="min-h-screen bg-dark-900 overflow-x-hidden">
+      <Navbar />
+      <BlogDetail />
+      <Footer />
+    </div>
+  )
+}
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Portfolio />} />
-        <Route path="/review" element={<ReviewForm />} />
-        <Route path="/admin" element={<AdminReviews />} />
+        <Route path="/"          element={<Portfolio />} />
+        <Route path="/review"    element={<ReviewForm />} />
+        <Route path="/admin"     element={<AdminReviews />} />
+        <Route path="/blog"      element={<BlogLayout />} />
+        <Route path="/blog/:id"  element={<BlogDetailLayout />} />
       </Routes>
     </BrowserRouter>
   )
