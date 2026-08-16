@@ -250,7 +250,7 @@ function BlogDetail() {
             <div className="mt-14">
               <Link to="/blog"
                 className="inline-flex items-center gap-2 text-gray-400 hover:text-primary-400 bg-dark-800 border border-dark-700 hover:border-primary-500/40 px-6 py-3 rounded-2xl transition-all text-sm font-medium">
-                <ArrowLeft size={16} /> Sare blogs dekho
+                <ArrowLeft size={16} /> Back
               </Link>
             </div>
           </motion.article>
