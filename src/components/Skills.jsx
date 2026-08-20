@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 
 // Vite assets imports
 import webImg from '../assets/web.jpg'
-import typingImg from '../assets/typing.jpg'
+import seoImg from '../assets/seo.png'
 import msofficeImg from '../assets/msoffice.jpg'
 import canvaImg from '../assets/canva.jpg'
 import digitalImg from '../assets/digital.jpg'
@@ -17,9 +17,9 @@ const skills = [
     color: 'from-cyan-400 to-blue-500',
   },
   {
-    image: typingImg,
-    name: 'Typing',
-    description: 'Professional typing skills with high speed and accuracy for efficient documentation and data entry.',
+    image: seoImg,
+    name: 'SEO',
+    description: 'Learn SEO strategies to improve website rankings, increase organic traffic, optimize content, and grow your online presence on search engines.',
     color: 'from-green-399 to-emerald-600',
   },
   {

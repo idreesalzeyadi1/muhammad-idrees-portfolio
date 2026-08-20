@@ -7,18 +7,20 @@ import mjImg from '../assets/mj.jpeg'
 import afsImg from '../assets/afs.jpg'
 import mcsImg from '../assets/mcs.jpg'
 import studentImg from '../assets/student.png'
+import riseImg from '../assets/risedigital.png'
+import aiImg from '../assets/ai.png'
 
 // Your actual projects with fixed imported variables
 const projects = [
   {
     id: 1,
-    image: mjImg,
-    title: 'M&J Traders',
-    description: 'A full-featured e-commerce platform for electronics with cart, checkout, order tracking, and admin panel. Built with React and Firebase.',
-    technologies: ['React', 'Firebase', 'Tailwind CSS', 'Framer Motion'],
-    liveUrl: 'https://www.mjtraders.company/',
+    image: riseImg,
+    title: 'Rise Digital Solutions',
+    description: 'Official website for Rise Digital Solutions—a full-service digital agency delivering Web & Mobile App Development, UI/UX Design, and strategic Digital Marketing solutions tailored for growing businesses.',
+    technologies: ['React', 'JavaScript', 'Firebase' , 'Tailwind CSS'],
+    liveUrl: 'https://www.risedigital.solutions/',
     githubUrl: '#',
-    featured: true,
+    featured: false,
     comingSoon: false,
   },
   {
@@ -45,7 +47,18 @@ const projects = [
   },
   {
     id: 4,
-    image: studentImg,
+     image: mjImg,
+    title: 'M&J Traders',
+    description: 'A full-featured e-commerce platform for electronics with cart, checkout, order tracking, and admin panel. Built with React and Firebase.',
+    technologies: ['React', 'Firebase', 'Tailwind CSS', 'Framer Motion'],
+    liveUrl: 'https://www.mjtraders.company/',
+    githubUrl: '#',
+    featured: true,
+    comingSoon: false,
+  },
+  {
+    id: 5,
+     image: studentImg,
     title: 'StudentTrack',
     description: 'A student management and tracking system for monitoring attendance, grades, and academic progress.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
@@ -55,26 +68,15 @@ const projects = [
     comingSoon: false,
   },
   {
-    id: 5,
-    image: null,
-    title: 'Coming Soon',
-    description: 'An exciting new project is currently in development. Stay tuned for updates!',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    liveUrl: '#',
-    githubUrl: '#',
-    featured: false,
-    comingSoon: true,
-  },
-  {
     id: 6,
-    image: null,
-    title: 'Coming Soon',
-    description: 'Another amazing project is on the way. Check back soon for the reveal!',
-    technologies: ['React', 'Firebase', 'Tailwind CSS'],
-    liveUrl: '#',
+    image: aiImg,
+    title: 'Elum AI',
+    description: 'An AI-powered study and assessment platform leveraging the Gemini API to generate interactive quizzes, smart study materials, and customized learning workflows.',
+    technologies: ['React', 'Firebase','JavaScript', 'Tailwind CSS'],
+    liveUrl: 'https://elum-ai.vercel.app/',
     githubUrl: '#',
     featured: false,
-    comingSoon: true,
+    comingSoon: false,
   },
 ]
 
