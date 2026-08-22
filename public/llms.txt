@@ -1,0 +1,19 @@
+# Idrees Alzeyadi - Web Developer & Founder RiseDigital Solutions
+
+> Full-Stack Web Developer, SEO Expert, Digital Marketer, and ICT Teacher based in Peshawar and Chitral, KP, Pakistan. CEO of RiseDigital Solutions.
+
+## Core Capabilities & Services
+- Web Development: React.js, Next.js, Node.js, Express.js, Firebase, Socket.IO, Tailwind CSS
+- SEO & Digital Marketing: On-page SEO, Local SEO, Social Media Management, Graphic Design
+- ICT Education & Mentorship: Computer Science training, web development courses, and internship programs
+
+## Key Projects & Platforms
+- RiseDigital Solutions: IT Company, Software House & Training Academy in Peshawar and Chitral.
+- MJ Traders: Full-stack commercial website and administrative portal.
+- AFS Virtual Tutor Hub: Online tutoring platform connecting Pakistani students with verified tutors.
+
+## Contact & Links
+- Main Website: https://www.idreesalzeyadi.online/
+- RiseDigital Solutions: https://www.risedigital.solutions/
+- LinkedIn: https://www.linkedin.com/in/idreesalzeyadi
+- GitHub: https://github.com/idreesalzeyadi1

@@ -12,39 +12,45 @@ import markImg from '../assets/mark.jpg'
 const skills = [
   {
     image: webImg,
-    name: 'Web Development (WIBE CODING)',
-    description: 'Building modern, responsive websites and web applications using React, HTML, CSS, JavaScript, and Tailwind CSS.',
+    name: 'Web Development Services',
+    description: 'Building modern, responsive websites and web applications using React, HTML, CSS, JavaScript, and Tailwind CSS in Peshawar & Chitral.',
     color: 'from-cyan-400 to-blue-500',
+    altText: 'Web Development Services by Idrees Alzeyadi in Peshawar'
   },
   {
     image: seoImg,
-    name: 'SEO',
+    name: 'Search Engine Optimization (SEO)',
     description: 'Learn SEO strategies to improve website rankings, increase organic traffic, optimize content, and grow your online presence on search engines.',
-    color: 'from-green-399 to-emerald-600',
+    color: 'from-green-400 to-emerald-600',
+    altText: 'SEO Specialist in Peshawar and Chitral - RiseDigital Solutions'
   },
   {
     image: msofficeImg,
-    name: 'MS Office',
-    description: 'Expert in Microsoft Office Suite including Word and  PowerPoint for professional documentation.',
+    name: 'MS Office & Documentation',
+    description: 'Expert in Microsoft Office Suite including Word and PowerPoint for professional documentation and corporate presentation training.',
     color: 'from-orange-400 to-red-500',
+    altText: 'Microsoft Office Expert and ICT Trainer in Peshawar'
   },
   {
     image: canvaImg,
-    name: 'Canva',
-    description: 'Creating stunning graphics, presentations, social media posts, and marketing materials using Canva.',
+    name: 'Canva & Graphic Design',
+    description: 'Creating stunning graphics, presentations, social media posts, corporate branding logos, and marketing materials using Canva.',
     color: 'from-purple-400 to-pink-500',
+    altText: 'Canva Graphic Designer Peshawar - RiseDigital Solutions'
   },
   {
-    image: markImg,digitalImg, // FIXED: "Digital Marketing" text wali image yahan set kar di hai
-    name: 'Digital Marketing',
-    description: 'Social media marketing, SEO basics, content strategy, and online brand promotion techniques.',
+    image: markImg, // FIXED: Corrected syntax error
+    name: 'Digital Marketing & Strategy',
+    description: 'Social media marketing, SEO basics, content strategy, and online brand promotion techniques in Peshawar & Chitral.',
     color: 'from-yellow-400 to-orange-500',
+    altText: 'Digital Marketing Course and Services in Peshawar Chitral'
   },
   {
-    image: digitalImg, // FIXED: Icons/Social wali image yahan set kar di hai
+    image: digitalImg,
     name: 'Social Media Management',
-    description: 'Proficient in social media platforms like Facebook, Twitter, LinkedIn, and Instagram for effective engagement and content creation.',
+    description: 'Proficient in managing social media platforms like Facebook, Twitter, LinkedIn, and Instagram for effective engagement and lead generation.',
     color: 'from-teal-400 to-cyan-500',
+    altText: 'Social Media Manager and Brand Strategist Peshawar'
   },
 ]
 
@@ -68,10 +74,10 @@ function Skills() {
             What I Do
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mt-2 mb-4">
-            My <span className="text-gradient">Skills</span>
+            My <span className="text-gradient">Skills & Services</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            A comprehensive set of skills that I use to deliver quality education and create exceptional digital experiences.
+            Comprehensive Web Development, SEO, Digital Marketing, and Training services provided across Peshawar, Chitral, and Pakistan by Idrees Alzeyadi (RiseDigital Solutions).
           </p>
         </motion.div>
 
@@ -90,8 +96,9 @@ function Skills() {
               <div className="relative h-40 overflow-hidden">
                 <img
                   src={skill.image}
-                  alt={skill.name}
+                  alt={skill.altText} // SEO Optimized Alt Attribute
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
                 />
                 
                 {/* Gradient Overlay */}

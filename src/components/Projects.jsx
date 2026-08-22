@@ -10,73 +10,78 @@ import studentImg from '../assets/student.png'
 import riseImg from '../assets/risedigital.png'
 import aiImg from '../assets/ai.png'
 
-// Your actual projects with fixed imported variables
 const projects = [
   {
     id: 1,
     image: riseImg,
     title: 'Rise Digital Solutions',
-    description: 'Official website for Rise Digital Solutions—a full-service digital agency delivering Web & Mobile App Development, UI/UX Design, and strategic Digital Marketing solutions tailored for growing businesses.',
-    technologies: ['React', 'JavaScript', 'Firebase' , 'Tailwind CSS'],
+    description: 'Official platform for Rise Digital Solutions—a top IT company and agency in Peshawar & Chitral delivering Web App Development, UI/UX, and Digital Marketing.',
+    technologies: ['React', 'JavaScript', 'Firebase', 'Tailwind CSS'],
     liveUrl: 'https://www.risedigital.solutions/',
     githubUrl: '#',
-    featured: false,
+    featured: true,
     comingSoon: false,
+    altText: 'Rise Digital Solutions IT Company Peshawar by Idrees Alzeyadi',
   },
   {
     id: 2,
     image: afsImg,
     title: 'AFS Virtual Tutor Hub',
-    description: 'An educational platform for virtual tutoring with course management, student dashboard, and interactive learning features.',
-    technologies: ['React', 'Vercel', 'CSS3', 'JavaScript'],
-    liveUrl: 'https://afs-virtual-tutor-hub.vercel.app/',
+    description: 'An online educational platform designed to connect Pakistani students with verified tutors, built with full-stack React and optimized performance.',
+    technologies: ['React', 'Vercel', 'CSS3', 'JavaScript', 'Firebase'],
+    liveUrl: 'https://www.afsvirtualtutorhub.org/',
     githubUrl: '#',
     featured: true,
     comingSoon: false,
+    altText: 'AFS Virtual Tutor Hub Educational Platform Developed by Idrees Alzeyadi',
   },
   {
     id: 3,
     image: mcsImg,
     title: 'MCS Maths Battle',
-    description: 'An interactive math competition web app where students can battle in real-time math challenges and track their scores.',
-    technologies: ['React', 'JavaScript', 'Vercel', 'CSS3'],
+    description: 'A real-time multiplayer educational game and interactive math competition web app designed for classroom projector displays.',
+    technologies: ['React', 'JavaScript', 'Node.js', 'Socket.IO', 'Tailwind CSS'],
     liveUrl: 'https://mcs-maths-battleweb.vercel.app/',
     githubUrl: '#',
     featured: false,
     comingSoon: false,
+    altText: 'MCS Maths Battle Educational Multiplayer Web App by Muhammad Idrees',
   },
   {
     id: 4,
-     image: mjImg,
+    image: mjImg,
     title: 'M&J Traders',
-    description: 'A full-featured e-commerce platform for electronics with cart, checkout, order tracking, and admin panel. Built with React and Firebase.',
+    description: 'Commercial e-commerce portal and client admin dashboard for electronics with order tracking, cart, and Firebase backend.',
     technologies: ['React', 'Firebase', 'Tailwind CSS', 'Framer Motion'],
     liveUrl: 'https://www.mjtraders.company/',
     githubUrl: '#',
     featured: true,
     comingSoon: false,
+    altText: 'MJ Traders E-Commerce Website Built by Idrees Alzeyadi',
   },
   {
     id: 5,
-     image: studentImg,
+    image: studentImg,
     title: 'StudentTrack',
-    description: 'A student management and tracking system for monitoring attendance, grades, and academic progress.',
+    description: 'A student management and tracking system for monitoring academic progress, attendance, and grades for educational institutions.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
     liveUrl: 'https://idreesalzeyadi1.github.io/StudentTrack/',
     githubUrl: 'https://github.com/idreesalzeyadi1/StudentTrack',
     featured: false,
     comingSoon: false,
+    altText: 'StudentTrack Student Management System Web App',
   },
   {
     id: 6,
     image: aiImg,
     title: 'Elum AI',
-    description: 'An AI-powered study and assessment platform leveraging the Gemini API to generate interactive quizzes, smart study materials, and customized learning workflows.',
-    technologies: ['React', 'Firebase','JavaScript', 'Tailwind CSS'],
+    description: 'An AI-powered study and assessment platform leveraging Google Gemini API to generate interactive quizzes and smart study materials.',
+    technologies: ['React', 'Firebase', 'JavaScript', 'Tailwind CSS', 'Gemini API'],
     liveUrl: 'https://elum-ai.vercel.app/',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/idreesalzeyadi1/Elum-AI',
     featured: false,
     comingSoon: false,
+    altText: 'Elum AI Study and Quiz Generator App by Idrees Alzeyadi',
   },
 ]
 
@@ -103,7 +108,7 @@ function Projects() {
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            A collection of projects that showcase my skills in web development, from concept to deployment.
+            A showcase of web applications, client portals, and full-stack solutions engineered by Idrees Alzeyadi (Muhammad Idrees) in Peshawar & Chitral.
           </p>
         </motion.div>
 
@@ -130,11 +135,12 @@ function Projects() {
                 ) : project.image ? (
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={project.altText}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 ) : null}
-                
+
                 {/* Placeholder if image fails */}
                 <div className="hidden w-full h-full items-center justify-center bg-gradient-to-br from-primary-500/10 to-accent-gold/10">
                   <Folder className="text-primary-400" size={64} />
@@ -147,6 +153,8 @@ function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Visit live demo for ${project.title}`}
+                      title={`Visit ${project.title}`}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center text-white hover:bg-primary-400 transition-colors"
@@ -158,6 +166,8 @@ function Projects() {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        aria-label={`View GitHub source code for ${project.title}`}
+                        title="View Source Code"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                         className="w-12 h-12 bg-dark-700 rounded-full flex items-center justify-center text-white hover:bg-dark-600 transition-colors"
