@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- PRIMARY SEO (Short & Precise Description for 100% Meta Score) -->
+    <!-- PRIMARY SEO -->
     <title>Idrees Alzeyadi | Web Developer</title>
     <meta name="title" content="Idrees Alzeyadi | Web Developer" />
     <meta name="description" content="Idrees Alzeyadi (Muhammad Idrees) - Web Developer, SEO Expert & CEO of RiseDigital Solutions in Peshawar & Chitral. Custom React Apps & Marketing." />
@@ -120,27 +120,37 @@
     </script>
   </head>
   <body>
+    <!-- React Root Container -->
     <div id="root"></div>
 
-    <!-- Noscript & Crawler Semantic HTML Fallback -->
-    <noscript>
-      <header>
-        <h1>Idrees Alzeyadi | Web Developer in Peshawar & CEO RiseDigital Solutions</h1>
-        <nav>
-          <ul>
-            <li><a href="https://www.idreesalzeyadi.online/">Home</a></li>
-            <li><a href="https://www.idreesalzeyadi.online/#skills">Skills & Services</a></li>
-            <li><a href="https://www.idreesalzeyadi.online/#projects">Projects</a></li>
-            <li><a href="https://www.risedigital.solutions" target="_blank">RiseDigital Solutions</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <h2>Professional Web Development, SEO, & Digital Marketing in Peshawar & Chitral</h2>
-        <p>Idrees Alzeyadi (Muhammad Idrees) is a full-stack Web Developer, SEO Specialist, Digital Marketer, and ICT Teacher located in Peshawar and Chitral, Khyber Pakhtunkhwa, Pakistan. As Founder & CEO of RiseDigital Solutions, Idrees Alzeyadi builds React and Node.js applications and runs local SEO and marketing campaigns.</p>
-        <p>Featured projects include <a href="https://www.mjtraders.company/" target="_blank">M&J Traders</a> e-commerce platform and <a href="https://www.afsvirtualtutorhub.org/" target="_blank">AFS Virtual Tutor Hub</a> educational portal.</p>
-      </main>
-    </noscript>
+    <!-- SEO Crawlers Fallback (Direct HTML Content to Fix Word Count, H1, and Links Error) -->
+    <header className="seo-crawler-content">
+      <h1>Idrees Alzeyadi | Web Developer in Peshawar & CEO RiseDigital Solutions</h1>
+      <nav aria-label="SEO Navigation">
+        <ul>
+          <li><a href="https://www.idreesalzeyadi.online/">Home</a></li>
+          <li><a href="https://www.idreesalzeyadi.online/#about">About Idrees Alzeyadi</a></li>
+          <li><a href="https://www.idreesalzeyadi.online/#skills">Skills & Services</a></li>
+          <li><a href="https://www.idreesalzeyadi.online/#projects">Featured Projects</a></li>
+          <li><a href="https://www.idreesalzeyadi.online/#contact">Contact Me</a></li>
+          <li><a href="https://www.risedigital.solutions" target="_blank" rel="noopener">RiseDigital Solutions IT Company</a></li>
+          <li><a href="https://www.mjtraders.company/" target="_blank" rel="noopener">MJ Traders E-Commerce</a></li>
+          <li><a href="https://www.afsvirtualtutorhub.org/" target="_blank" rel="noopener">AFS Virtual Tutor Hub</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main className="seo-crawler-content">
+      <section>
+        <h2>Professional Web Development, SEO & Digital Marketing Services in Peshawar & Chitral</h2>
+        <p>
+          Welcome to the official portfolio of Idrees Alzeyadi (Muhammad Idrees), a Full-Stack Web Developer, SEO Expert, Social Media Manager, Graphic Designer, and ICT Teacher based in Peshawar and Chitral, Khyber Pakhtunkhwa, Pakistan. As the Founder and CEO of RiseDigital Solutions, Idrees Alzeyadi builds modern React applications, Node.js backends, and delivers custom SEO campaigns for businesses and personal brands across Pakistan.
+        </p>
+        <p>
+          Our featured live web engineering projects include <a href="https://www.mjtraders.company/" target="_blank" rel="noopener">M&J Traders</a> e-commerce platform and <a href="https://www.afsvirtualtutorhub.org/" target="_blank" rel="noopener">AFS Virtual Tutor Hub</a> educational portal. Explore skills, review recent code implementations, or contact Idrees Alzeyadi today for digital agency services, IT training, and software development.
+        </p>
+      </section>
+    </main>
 
     <script type="module" src="/src/main.jsx"></script>
   </body>
