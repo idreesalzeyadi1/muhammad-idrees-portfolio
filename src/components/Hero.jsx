@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Download, Send, ChevronDown, X, Mail, Phone, MapPin, Github, Linkedin, Facebook, Instagram } from 'lucide-react'
-import { Player } from '@lottiefiles/react-lottie-player'
+import idreesImage from '../assets/idreesalzeyadi.webp'
 
 function Hero() {
   const [isProfileOpen, setIsProfileOpen] = useState(false)
@@ -125,7 +125,7 @@ function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Animation */}
+          {/* Right Content - Profile Image */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -133,19 +133,20 @@ function Hero() {
             className="hidden lg:flex order-2 lg:order-2 justify-center"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-500/30 to-accent-gold/30 rounded-full blur-[100px]" />
+              <div className="absolute inset-10 bg-gradient-to-r from-primary-500/30 to-accent-gold/30 rounded-full blur-[100px]" />
 
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="relative z-10 w-[220px] h-[220px] md:w-[420px] md:h-[420px] lg:w-[520px] lg:h-[520px]"
+                className="relative z-10 w-[310px] h-[320px] md:w-[460px] md:h-[420px] lg:w-[560px] lg:h-[500px] rounded-[2rem] border border-dark-700 bg-dark-900/60 p-3 shadow-2xl shadow-primary-500/10"
               >
-                <Player
-                  autoplay
-                  loop
-                  src="https://assets9.lottiefiles.com/packages/lf20_w98qte06.json"
-                  style={{ width: '100%', height: '100%' }}
-                />
+                <div className="w-full h-full overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-primary-500/10 to-accent-gold/10">
+                  <img
+                    src={idreesImage}
+                    alt="Idrees Alzeyadi"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
 
                 <motion.div
                   animate={{ rotate: 360 }}
@@ -169,7 +170,7 @@ function Hero() {
                 <motion.div
                   animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  className="absolute bottom-16 -left-2 bg-dark-800/90 backdrop-blur-sm p-2 sm:p-3 rounded-xl border border-accent-gold/30 shadow-lg shadow-accent-gold/10"
+                  className="absolute bottom-2 -left-6 bg-dark-800/90 backdrop-blur-sm p-2 sm:p-3 rounded-xl border border-accent-gold/30 shadow-lg shadow-accent-gold/10"
                 >
                   <span className="text-xl sm:text-2xl">🎓</span>
                 </motion.div>
