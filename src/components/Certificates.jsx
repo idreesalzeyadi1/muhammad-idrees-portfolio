@@ -5,20 +5,19 @@ import { Award, ExternalLink, Calendar, X, ZoomIn } from 'lucide-react'
 
 // Vite production-friendly static imports
 import dartImg from '../assets/dart.png'
-
 import DigitalMrk from '../assets/DigitalMrk.png'
 import ActAiCrt from '../assets/ActAiCrt.png'
-
+import cyberImg from '../assets/cybersecurty.webp'
+import supportImg from '../assets/it-support.webp'
 
 const certificates = [
   {
     id: 1,
-    image: ActAiCrt, 
+    image: ActAiCrt,
     title: 'Advanced AI (ACT AI)',
-    issuer: ' HEC Pakistan , SkillBridge',
+    issuer: 'HEC Pakistan, SkillBridge',
     date: '2026',
-    credentialUrl: '#', 
-    // Updated tags as requested
+    credentialUrl: '#',
     skills: ['AI TOOLS', 'VIBE CODING', 'CUSTOMIZE CHAT BOTS'],
   },
   {
@@ -27,26 +26,44 @@ const certificates = [
     title: 'Digital Marketing Course',
     issuer: 'DigiSkills (via NAVTTC)',
     date: '2026',
-    credentialUrl: '#', 
+    credentialUrl: '#',
     skills: ['Social Media Marketing', 'SEO', 'Content Strategy', 'Online Branding'],
   },
   {
     id: 3,
-    image: dartImg, 
+    image: dartImg,
     title: 'Dart Fundamentals',
     issuer: 'Cisco Networking Academy',
     date: '2025',
-    credentialUrl: '#', 
+    credentialUrl: '#',
     skills: ['Dart Programming', 'Flutter Basics', 'OOP', 'Application Logic'],
   },
   {
     id: 4,
-    image: dartImg, 
-    title: 'Dart Fundamentals',
-    issuer: 'Cisco Networking Academy',
+    image: null,
+    title: 'HTML & JavaScript Certificate',
+    issuer: 'Professional Web Development Training',
     date: '2025',
-    credentialUrl: '#', 
-    skills: ['Dart Programming', 'Flutter Basics', 'OOP', 'Application Logic'],
+    credentialUrl: '#',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Front-End Development'],
+  },
+  {
+    id: 5,
+    image: cyberImg,
+    title: 'Cybersecurity Certificate',
+    issuer: 'IT Security and Digital Safety Training',
+    date: '2025',
+    credentialUrl: '#',
+    skills: ['Cybersecurity', 'Threat Awareness', 'Digital Safety', 'Secure Practices'],
+  },
+  {
+    id: 6,
+    image: supportImg,
+    title: 'IT Customer Support Certificate',
+    issuer: 'Customer Service and Technical Support Training',
+    date: '2025',
+    credentialUrl: '#',
+    skills: ['IT Support', 'Customer Care', 'Troubleshooting', 'Technical Assistance'],
   },
 ]
 
@@ -76,12 +93,12 @@ function Certificates() {
             Certificates & <span className="text-gradient">Courses</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Professional certifications and courses that validate my expertise and commitment to continuous learning.
+            Professional certifications in WordPress, SEO, web development, JavaScript, cybersecurity, and IT customer support that strengthen my digital skill set in Pakistan and beyond.
           </p>
         </motion.div>
 
         {/* Certificates Grid */}
-        <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" role="list" aria-label="Professional certificates and courses">
           {certificates.map((cert, index) => (
             <motion.div
               key={cert.id}
@@ -91,13 +108,17 @@ function Certificates() {
               whileHover={{ y: -8 }}
               className="glass-card overflow-hidden group cursor-pointer"
               onClick={() => setSelectedCert(cert)}
+              role="listitem"
+              aria-label={`${cert.title} certificate by ${cert.issuer}`}
+              itemScope
+              itemType="https://schema.org/CreativeWork"
             >
               {/* Certificate Image */}
               <div className="relative h-48 bg-dark-700 overflow-hidden flex items-center justify-center">
                 {cert.image ? (
                   <img
                     src={cert.image}
-                    alt={cert.title}
+                    alt={`${cert.title} certificate by ${cert.issuer}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 ) : (
@@ -136,11 +157,11 @@ function Certificates() {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-primary-400 transition-colors">
+                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-primary-400 transition-colors" itemProp="name">
                   {cert.title}
                 </h3>
-                <p className="text-primary-400 font-medium text-sm mb-2">{cert.issuer}</p>
-                <p className="text-gray-500 text-sm flex items-center gap-1 mb-4">
+                <p className="text-primary-400 font-medium text-sm mb-2" itemProp="publisher">{cert.issuer}</p>
+                <p className="text-gray-500 text-sm flex items-center gap-1 mb-4" itemProp="dateCreated">
                   <Calendar size={14} />
                   {cert.date}
                 </p>
@@ -196,7 +217,7 @@ function Certificates() {
                   {selectedCert.image ? (
                     <img
                       src={selectedCert.image}
-                      alt={selectedCert.title}
+                      alt={`${selectedCert.title} certificate by ${selectedCert.issuer}`}
                       className="w-full h-auto max-h-[65vh] object-contain rounded-lg"
                     />
                   ) : (

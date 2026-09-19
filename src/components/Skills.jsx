@@ -8,6 +8,7 @@ import msofficeImg from '../assets/msoffice.jpg'
 import canvaImg from '../assets/canva.jpg'
 import digitalImg from '../assets/digital.jpg'
 import markImg from '../assets/mark.jpg'
+import WordpressImg from '../assets/WordPress.webp'
 
 const skills = [
   {
@@ -44,6 +45,13 @@ const skills = [
     description: 'Social media marketing, SEO basics, content strategy, and online brand promotion techniques in Peshawar & Chitral.',
     color: 'from-yellow-400 to-orange-500',
     altText: 'Digital Marketing Course and Services in Peshawar Chitral'
+  },
+  {
+    image: WordpressImg,
+    name: 'WordPress Website Development',
+    description: 'Professional WordPress website design and development for business sites, portfolios, and landing pages in Peshawar, Chitral, and Pakistan with responsive, SEO-friendly layouts.',
+    color: 'from-teal-400 to-cyan-500',
+    altText: 'WordPress Website Developer in Peshawar and Chitral'
   },
   {
     image: digitalImg,
