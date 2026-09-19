@@ -11,7 +11,18 @@ import {
   ArrowUp
 } from 'lucide-react'
 
-// PLACEHOLDER: Edit your social links here
+// Live Profile Details for Schema & Link Connectivity
+const PROFILE_DATA = {
+  name: "Muhammad Idrees",
+  jobTitle: "Computer Science Teacher & Web Developer",
+  email: "idreesalzeyadi03@gmail.com",
+  telephone: "+923411929949",
+  addressLocality: "Peshawar",
+  addressCountry: "Pakistan",
+  image: "http://idreesalzeyadi.online/profile-pic.jpg",
+  url: "http://idreesalzeyadi.online/",
+}
+
 const socialLinks = [
   { icon: <Github size={20} />, url: 'https://github.com/idreesalzeyadi1', label: 'GitHub' },
   { icon: <Linkedin size={20} />, url: 'https://www.linkedin.com/in/idreesalzeyadi/', label: 'LinkedIn' },
@@ -28,11 +39,10 @@ const socialLinks = [
   },
 ]
 
-// PLACEHOLDER: Edit your contact info here
 const contactInfo = [
-  { icon: <Mail size={18} />, text: 'idreesalzeyadi03@gmail.com', href: 'mailto:idreesalzeyadi03@gmail.com' },
-  { icon: <Phone size={18} />, text: '+923411929949', href: 'tel:+923411929949' },
-  { icon: <MapPin size={18} />, text: 'Peshawar, Pakistan', href: '#' },
+  { icon: <Mail size={18} />, text: 'idreesalzeyadi03@gmail.com', href: 'mailto:idreesalzeyadi03@gmail.com', label: 'Email Address' },
+  { icon: <Phone size={18} />, text: '+923411929949', href: 'tel:+923411929949', label: 'Phone Number' },
+  { icon: <MapPin size={18} />, text: 'Peshawar, Pakistan', href: 'https://maps.google.com/?q=Peshawar,Pakistan', label: 'Location' },
 ]
 
 const quickLinks = [
@@ -48,9 +58,32 @@ function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  // Schema.org Structured Data for Google & AI Engines (ChatGPT / Gemini / Claude)
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": PROFILE_DATA.name,
+    "jobTitle": PROFILE_DATA.jobTitle,
+    "url": PROFILE_DATA.url,
+    "image": PROFILE_DATA.image,
+    "email": PROFILE_DATA.email,
+    "telephone": PROFILE_DATA.telephone,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": PROFILE_DATA.addressLocality,
+      "addressCountry": PROFILE_DATA.addressCountry
+    },
+    "sameAs": socialLinks.map(s => s.url)
+  }
+
   return (
-    <footer id="contact" className="bg-dark-800/50 border-t border-dark-700">
-      {/* Main Footer */}
+    <footer id="contact" className="bg-dark-800/50 border-t border-dark-700" itemScope itemType="https://schema.org/Person">
+      {/* Structural Data Injection */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+
       <div className="section-padding pb-8">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -62,16 +95,16 @@ function Footer() {
                 className="inline-flex items-center gap-1 mb-4"
                 whileHover={{ scale: 1.02 }}
               >
-                <span className="text-2xl font-display font-black">
+                <span className="text-2xl font-display font-black" itemProp="name">
                   <span className="text-primary-400">M</span>
                   <span className="text-white">uhammad</span>
-                </span>
-                <span className="text-2xl font-display font-black">
+                  {" "}
                   <span className="text-accent-gold">I</span>
                   <span className="text-white">drees</span>
                 </span>
               </motion.a>
-              <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
+              
+              <p className="text-gray-400 mb-6 max-w-md leading-relaxed" itemProp="description">
                 Computer Science Teacher and Web Developer passionate about creating 
                 impactful digital experiences and empowering the next generation of tech enthusiasts.
               </p>
@@ -87,7 +120,8 @@ function Footer() {
                     whileHover={{ scale: 1.1, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-10 h-10 bg-dark-700 hover:bg-primary-500 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
-                    aria-label={social.label}
+                    aria-label={`Muhammad Idrees on ${social.label}`}
+                    itemProp="sameAs"
                   >
                     {social.icon}
                   </motion.a>
@@ -97,7 +131,7 @@ function Footer() {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-white font-bold mb-4">Quick Links</h4>
+              <h3 className="text-white font-bold mb-4 text-lg">Quick Links</h3>
               <ul className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
@@ -115,16 +149,17 @@ function Footer() {
 
             {/* Contact Info */}
             <div>
-              <h4 className="text-white font-bold mb-4">Contact Info</h4>
+              <h3 className="text-white font-bold mb-4 text-lg">Contact Info</h3>
               <ul className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <li key={index}>
                     <a
                       href={info.href}
+                      aria-label={info.label}
                       className="text-gray-400 hover:text-primary-400 transition-colors duration-300 flex items-center gap-3"
                     >
                       <span className="text-primary-400">{info.icon}</span>
-                      {info.text}
+                      <span className="text-sm">{info.text}</span>
                     </a>
                   </li>
                 ))}
@@ -135,19 +170,17 @@ function Footer() {
           {/* Divider */}
           <div className="border-t border-dark-700 pt-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              {/* Copyright */}
               <p className="text-gray-500 text-sm flex items-center gap-1">
-                © {new Date().getFullYear()} Muhammad Idrees. Made with 
-                <Heart size={14} className="text-red-500 fill-red-500" /> 
-                All rights reserved.
+                © {new Date().getFullYear()} Muhammad Idrees. All rights reserved.
+                <Heart size={14} className="text-red-500 fill-red-500 mx-1" aria-label="love" />
               </p>
 
-              {/* Back to Top */}
               <motion.button
                 onClick={scrollToTop}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-2 text-gray-400 hover:text-primary-400 transition-colors"
+                aria-label="Back to top"
               >
                 Back to top
                 <span className="w-8 h-8 bg-dark-700 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-colors">
